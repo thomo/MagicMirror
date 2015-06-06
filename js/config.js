@@ -15,6 +15,7 @@ var feed = 'http://www.spiegel.de/schlagzeilen/tops/index.rss';
 
 // compliments:
 var morning = [
+            'Herzlichen Glückwunch!',
             'Guten Morgen, Sonnenschein!',
             'Genieße den Tag',
             'Gut geschlafen?'
@@ -23,10 +24,13 @@ var morning = [
 var afternoon = [
             'Hello, beauty!',
             'You look sexy!',
-            'Looking good today!'
+            'Looking good today!',
+            'Und jetzt einen Kaffee!'
         ];
        
 var evening = [
+            'Eine Augenweide!',
+            'Bettzeit?',
             'Heiss, mach dich bereit!',
             'Es ist ein Genuß dich zu sehen!',
             'Cool!'

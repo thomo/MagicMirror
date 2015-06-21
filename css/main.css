@@ -195,11 +195,10 @@ body, html {
 }
 
 .newshead {
-	font-weight: bold;	
 }
 
 .news {
-	font-size: 22px;
+	font-size: 25px;
 }
 
 @font-face {

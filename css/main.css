@@ -194,6 +194,14 @@ body, html {
 	display: none;
 }
 
+.newshead {
+	font-weight: bold;	
+}
+
+.news {
+	font-size: 22px;
+}
+
 @font-face {
   font-family: 'HelveticaNeue-UltraLight';
   src: url('font/HelveticaNeue-UltraLight.eot'); /* IE9 Compat Modes */

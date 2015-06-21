@@ -27,6 +27,7 @@
 		<div class="compliment light"></div>
 	</div>
 	<div class="bottom center-hor">
+		<div class="newshead medium"></div>
 		<div class="news medium"></div>
 	</div>
 

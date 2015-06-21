@@ -32,7 +32,8 @@ function kmh2beaufort(kmh) {
 
 jQuery(document).ready(function($) {
 
-  var news = [];
+  var newsDescs = [];
+  var newsHeads = [];
   var newsIndex = 0;
 
   var eventList = [];
@@ -356,10 +357,12 @@ jQuery(document).ready(function($) {
     $.feedToJson({
       feed: feed,
       success: function(data) {
-        news = [];
+        newsDescs = [];
+	newsHeads = [];
         for (var i in data.item) {
           var item = data.item[i];
-          news.push(item.title);
+          newsHeads.push(item.title);
+	  newsDescs.push(item.description);
         }
       }
     });
@@ -369,14 +372,17 @@ jQuery(document).ready(function($) {
   })();
 
   (function showNews() {
-    var newsItem = news[newsIndex];
+    var newsItem = newsDescs[newsIndex];
+    var newsHead = newsHeads[newsIndex];
+
+    $('.newshead').updateWithText(newsHead, 2000);
     $('.news').updateWithText(newsItem, 2000);
 
     newsIndex--;
-    if (newsIndex < 0) newsIndex = news.length - 1;
+    if (newsIndex < 0) newsIndex = newsHeads.length - 1;
     setTimeout(function() {
       showNews();
-    }, 5500);
+    }, 7000);
   })();
 
 });

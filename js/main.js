@@ -382,7 +382,7 @@ jQuery(document).ready(function($) {
     if (newsIndex < 0) newsIndex = newsHeads.length - 1;
     setTimeout(function() {
       showNews();
-    }, 11500);
+    }, 15000);
   })();
 
 });

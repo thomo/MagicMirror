@@ -6,7 +6,7 @@ var lang = 'de'; // window.navigator.language;
 //change weather params here:
 //units: metric or imperial
 var weatherParams = {
-    'appid':openweatherkey, 
+    'APPID':openweatherkey, 
     'q':'Bergisch Gladbach,Germany',
     'units':'metric',
     'lang':lang

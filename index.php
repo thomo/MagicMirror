@@ -26,9 +26,14 @@
 	<div class="lower-third center-hor">
 		<div class="compliment light"></div>
 	</div>
-	<div class="bottom center-hor">
+	<div class="bottom news-datetime">
+		<div class="newsdate"></div>
+		<div class="newstime"></div>
+	</div>
+
+	<div class="bottom news-content">
 		<div class="newshead medium"></div>
-		<div class="news medium"></div>
+		<div class="newsdesc medium"></div>
 	</div>
 
 <script src="js/jquery.js"></script>

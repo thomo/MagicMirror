@@ -61,6 +61,16 @@ body, html {
 	text-align: center;	
 }
 
+.news-datetime
+{
+  left: 50px;
+}
+
+.news-content
+{
+  left: 200px;
+}
+
 .bottom
 {
 	position: absolute;
@@ -184,20 +194,18 @@ body, html {
 	text-align: right;
 }
 
-.dishwasher {
-	background-color: white;
-	color: black;
-	margin: 0 200px;	
-	font-size: 60px;	
-	border-radius: 1000px;
-	border-radius: 1200px;
-	display: none;
+.newsdate {
+	font-size: 25px;
+}
+
+.newstime {
+	font-size: 25px;
 }
 
 .newshead {
 }
 
-.news {
+.newsdesc {
 	font-size: 25px;
 }
 

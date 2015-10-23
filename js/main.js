@@ -32,8 +32,13 @@ function kmh2beaufort(kmh) {
 
 jQuery(document).ready(function($) {
 
-  var newsDescs = [];
-  var newsHeads = [];
+  var newsData = [];
+  var newsDummy = {};
+  newsDummy.date = 'DD.MM.YYYY';
+  newsDummy.time = 'HH:MM:SS';
+  newsDummy.head = 'Headline';
+  newsDummy.desc = 'news description';
+  newsData.push(newsDummy);
   var newsIndex = 0;
 
   var eventList = [];
@@ -249,7 +254,7 @@ jQuery(document).ready(function($) {
     }
 
 
-    $.getJSON('http://api.openweathermap.org/data/2.5/weather?q&appid&units', weatherParams, function(json, textStatus) {
+    $.getJSON('http://api.openweathermap.org/data/2.5/weather', weatherParams, function(json, textStatus) {
 
       var temp = roundVal(json.main.temp);
       var temp_min = roundVal(json.main.temp_min);
@@ -303,7 +308,7 @@ jQuery(document).ready(function($) {
       '13n': 'wi-night-snow',
       '50n': 'wi-night-alt-cloudy-windy'
     }
-    $.getJSON('http://api.openweathermap.org/data/2.5/forecast?q&appid&units', weatherParams, function(json, textStatus) {
+    $.getJSON('http://api.openweathermap.org/data/2.5/forecast', weatherParams, function(json, textStatus) {
 
       var forecastData = {};
 
@@ -357,12 +362,20 @@ jQuery(document).ready(function($) {
     $.feedToJson({
       feed: feed,
       success: function(data) {
-        newsDescs = [];
-	newsHeads = [];
+        newsData = [];
         for (var i in data.item) {
           var item = data.item[i];
-          newsHeads.push(item.title);
-	  newsDescs.push(item.description);
+
+          var newsitem = {};
+	  newsitem.head = item.title;
+	  newsitem.desc = item.description;
+
+	  var dt = moment(Date.parse(item.pubDate));
+
+	  newsitem.date = dt.format("DD.MM.YYYY");
+          newsitem.time = dt.format("HH:mm:ss");
+
+	  newsData.push(newsitem);
         }
       }
     });
@@ -372,14 +385,15 @@ jQuery(document).ready(function($) {
   })();
 
   (function showNews() {
-    var newsItem = newsDescs[newsIndex];
-    var newsHead = newsHeads[newsIndex];
+    var newsItem = newsData[newsIndex];
 
-    $('.newshead').updateWithText(newsHead, 2000);
-    $('.news').updateWithText(newsItem, 2000);
+    $('.newshead').updateWithText(newsItem.head, 2000);
+    $('.newsdesc').updateWithText(newsItem.desc, 2000);
+    $('.newsdate').updateWithText(newsItem.date, 2000);
+    $('.newstime').updateWithText(newsItem.time, 2000);
 
     newsIndex--;
-    if (newsIndex < 0) newsIndex = newsHeads.length - 1;
+    if (newsIndex < 0) newsIndex = newsData.length - 1;
     setTimeout(function() {
       showNews();
     }, 15000);

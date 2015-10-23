@@ -35,6 +35,7 @@
 <script src="js/jquery.feedToJSON.js"></script>
 <script src="js/ical_parser.js"></script>
 <script src="js/moment-with-langs.min.js"></script>
+<srcipt src="js/secret.js"></script>
 <script src="js/config.js"></script>
 <script src="js/rrule.js"></script>
 

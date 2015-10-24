@@ -34,8 +34,8 @@ jQuery(document).ready(function($) {
 
   var newsData = [];
   var newsDummy = {};
-  newsDummy.date = 'DD.MM.YYYY';
-  newsDummy.time = 'HH:MM:SS';
+  newsDummy.date = 'DAYNAME<br>DD.MM.YYYY';
+  newsDummy.time = 'HH:MM';
   newsDummy.head = 'Headline';
   newsDummy.desc = 'news description';
   newsData.push(newsDummy);
@@ -372,8 +372,8 @@ jQuery(document).ready(function($) {
 
 	  var dt = moment(Date.parse(item.pubDate));
 
-	  newsitem.date = dt.format("DD.MM.YYYY");
-          newsitem.time = dt.format("HH:mm:ss");
+	  newsitem.date = dt.format("dddd<br>DD.MM.YYYY");
+          newsitem.time = dt.format("HH:mm");
 
 	  newsData.push(newsitem);
         }

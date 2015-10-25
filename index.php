@@ -27,8 +27,7 @@
 		<div class="compliment light"></div>
 	</div>
 	<div class="bottom news-datetime">
-		<div class="newsdate"></div>
-		<div class="newstime"></div>
+		<div class="newstimestamp"></div>
 	</div>
 
 	<div class="bottom news-content">

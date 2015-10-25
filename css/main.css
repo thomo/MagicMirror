@@ -194,11 +194,7 @@ body, html {
 	text-align: right;
 }
 
-.newsdate {
-	font-size: 25px;
-}
-
-.newstime {
+.newstimestamp {
 	font-size: 25px;
 }
 

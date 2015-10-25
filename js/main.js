@@ -34,8 +34,7 @@ jQuery(document).ready(function($) {
 
   var newsData = [];
   var newsDummy = {};
-  newsDummy.date = 'DAYNAME<br>DD.MM.YYYY';
-  newsDummy.time = 'HH:MM';
+  newsDummy.timestamp = 'DAYNAME<br>DD.MM.YYYY<br>HH:MM';
   newsDummy.head = 'Headline';
   newsDummy.desc = 'news description';
   newsData.push(newsDummy);
@@ -372,8 +371,7 @@ jQuery(document).ready(function($) {
 
 	  var dt = moment(Date.parse(item.pubDate));
 
-	  newsitem.date = dt.format("dddd<br>DD.MM.YYYY");
-          newsitem.time = dt.format("HH:mm");
+	  newsitem.timestamp = dt.format("dddd<br>DD.MM.YYYY<br>HH:mm");
 
 	  newsData.push(newsitem);
         }
@@ -389,8 +387,7 @@ jQuery(document).ready(function($) {
 
     $('.newshead').updateWithText(newsItem.head, 2000);
     $('.newsdesc').updateWithText(newsItem.desc, 2000);
-    $('.newsdate').updateWithText(newsItem.date, 2000);
-    $('.newstime').updateWithText(newsItem.time, 2000);
+    $('.newstimestamp').updateWithText(newsItem.timestamp, 2000);
 
     newsIndex--;
     if (newsIndex < 0) newsIndex = newsData.length - 1;

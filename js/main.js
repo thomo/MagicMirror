@@ -383,13 +383,16 @@ jQuery(document).ready(function($) {
   })();
 
   (function showNews() {
-    var newsItem = newsData[newsIndex];
+    if (newsIndex >= newsData.length) newsIndex = newsData.length-1;
+    if (newsIndex >= 0) {
+   	 var newsItem = newsData[newsIndex];
 
-    $('.newshead').updateWithText(newsItem.head, 2000);
-    $('.newsdesc').updateWithText(newsItem.desc, 2000);
-    $('.newstimestamp').updateWithText(newsItem.timestamp, 2000);
+    	$('.newshead').updateWithText(newsItem.head || 'No data!?', 2000);
+    	$('.newsdesc').updateWithText(newsItem.desc || 'No internet connection?', 2000);
+    	$('.newstimestamp').updateWithText(newsItem.timestamp || moment().format("dddd<br>DD.MM.YYYY<br>HH:mm"), 2000);
 
-    newsIndex--;
+    	newsIndex--;
+    }
     if (newsIndex < 0) newsIndex = newsData.length - 1;
     setTimeout(function() {
       showNews();

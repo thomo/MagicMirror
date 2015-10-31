@@ -36,3 +36,10 @@ var evening = [
             'Es ist ein Genuß dich zu sehen!',
             'Wie war dein Tag?'
         ];
+
+var night = [
+	'Noch nicht müde?',
+	'Nu aber ab ins Bett!',
+	'Wird wohl wieder spät heute?',
+	'Schlaf schön!'
+	];

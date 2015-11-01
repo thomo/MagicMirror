@@ -4,10 +4,12 @@ var lang = 'de'; // window.navigator.language;
 // var lang = 'en';
 
 //change weather params here:
-//units: metric or imperial
 var weatherParams = {
-    'APPID':openweatherkey, 
+    // your openwetherkey - from OpenWeather Website
+    'APPID':'your openweather key', 
+    // your location
     'q':'Bergisch Gladbach,Germany',
+    // units: metric or imperial
     'units':'metric',
     'lang':lang
 };
@@ -16,7 +18,6 @@ var feed = 'http://www.spiegel.de/schlagzeilen/tops/index.rss';
 
 // compliments:
 var morning = [
-//            'Herzlichen Glückwunch!',
             'Guten Morgen, Sonnenschein!',
             'Genieße den Tag',
             'Gut geschlafen?'

@@ -213,9 +213,9 @@ jQuery(document).ready(function($) {
       var date = new Date();
       var hour = date.getHours();
       //set compliments to use
-      if      (hour <  5 ) { compliments = night; } 
+      if      (hour <  6 ) { compliments = night; } 
       else if (hour < 12 ) { compliments = morning; }
-      else if (hour < 17 ) { compliments = afternoon; }
+      else if (hour < 19 ) { compliments = afternoon; }
       else if (hour < 24 ) { compliments = evening; }
 
       compliment = Math.floor(Math.random() * compliments.length);

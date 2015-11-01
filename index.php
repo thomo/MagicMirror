@@ -5,6 +5,7 @@
 		<?php include('css/main.css') ?>
 	</style>
 	<link rel="stylesheet" type="text/css" href="css/weather-icons.css">
+        <link rel="stylesheet" type="text/css" href="css/my.css">
 	<script type="text/javascript">
 		var gitHash = '<?php echo trim(`git rev-parse HEAD`) ?>';
 	</script>
@@ -39,7 +40,6 @@
 <script src="js/jquery.feedToJSON.js"></script>
 <script src="js/ical_parser.js"></script>
 <script src="js/moment-with-langs.min.js"></script>
-<script src="js/secret.js"></script>
 <script src="js/config.js"></script>
 <script src="js/rrule.js"></script>
 
